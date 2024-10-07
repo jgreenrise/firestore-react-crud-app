@@ -24,23 +24,23 @@ const Login = ({ setIsAuthenticated }) => {
           // IdP data available using getAdditionalUserInfo(result)
 
           Swal.fire({
-            timer: 1500,
-            showConfirmButton: false,
-            willOpen: () => {
-              Swal.showLoading();
-            },
-            willClose: () => {
-              localStorage.setItem('is_authenticated', true);
-              setIsAuthenticated(true);
-    
-              Swal.fire({
-                icon: 'success',
-                title: 'Successfully logged in!' +user,
-                showConfirmButton: false,
-                timer: 1500,
-              });
-            },
-          });
+          timer: 1500,
+          showConfirmButton: false,
+          willOpen: () => {
+            Swal.showLoading();
+          },
+          willClose: () => {
+            localStorage.setItem('is_authenticated', true);
+            setIsAuthenticated(true);
+  
+            Swal.fire({
+              icon: 'success',
+              title: 'Successfully logged in!' +user,
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          },
+        });
           // ...
         }).catch((error) => {
           // Handle Errors here.
